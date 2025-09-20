@@ -1,3 +1,4 @@
+const books = document.querySelector(".books");
 const myLibrary = [];
 
 function Book(title, author, pages, completed) {
@@ -25,3 +26,12 @@ function addBookToLibrary(title, author, pages, read) {
     const book = new Book(title, author, pages, completed);
     myLibrary.push(book);
 }
+
+function showAllBooks(myLibrary) {
+    myLibrary.forEach(book => {
+        const newBook = document.createElement("div");
+        newBook.innerText = book.info();
+        books.appendChild(newBook);
+    });
+}
+
